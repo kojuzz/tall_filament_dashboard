@@ -71,7 +71,7 @@ class OrderResource extends Resource
                                 'processing' => 'Processing', 
                                 'shipped' => 'Shipped', 
                                 'delivered' => 'Delivered', 
-                                'cancelled' => 'Cancelled'
+                                'canceled' => 'Canceled'
                             ])
                             ->inline()  // Display the buttons in a single line
                             ->default('new')
@@ -81,14 +81,14 @@ class OrderResource extends Resource
                                 'processing' => 'gray', 
                                 'shipped' => 'warning', 
                                 'delivered' => 'success', 
-                                'cancelled' => 'danger'
+                                'canceled' => 'danger'
                             ])
                             ->icons([
                                 'new' => 'heroicon-m-sparkles', 
                                 'processing' => 'heroicon-m-arrow-path', 
                                 'shipped' => 'heroicon-m-truck', 
                                 'delivered' => 'heroicon-m-check-badge', 
-                                'cancelled' => 'heroicon-m-x-circle'
+                                'canceled' => 'heroicon-m-x-circle'
                             ]),
 
                         // Currency Select Input Field
@@ -217,7 +217,7 @@ class OrderResource extends Resource
                         'processing' => 'Processing', 
                         'shipped' => 'Shipped', 
                         'delivered' => 'Delivered', 
-                        'cancelled' => 'Cancelled'
+                        'canceled' => 'Canceled'
                     ])
                     ->searchable()
                     ->selectablePlaceholder(false)  // Select an option ကိုဖျေက်ဖို့ပါ၊
