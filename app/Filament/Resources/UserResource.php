@@ -22,6 +22,13 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?int $navigationSort = 1;
+    protected static ?string $recordTitleAttribute = 'name';
+    // ရှာချင်တဲ့ column တွေထည့်ပေးလို့ရပါတယ်
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name', 'email'];
+    }
 
     public static function form(Form $form): Form
     {
