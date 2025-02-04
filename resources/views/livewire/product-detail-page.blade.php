@@ -49,7 +49,7 @@
                             <p class="max-w-md text-gray-700 dark:text-gray-400">
                                 {!! Str::markdown($product->description) !!}
                             </p>
-                            </div>
+                        </div>
                         <div class="w-32 mb-8 ">
                             <label for="" class="w-full pb-1 text-xl font-semibold text-gray-700 border-b border-blue-300 dark:border-gray-600 dark:text-gray-400">Quantity</label>
                             <div class="relative flex flex-row w-full h-10 mt-6 bg-transparent rounded-lg">
