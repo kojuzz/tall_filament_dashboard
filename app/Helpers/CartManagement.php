@@ -43,20 +43,18 @@ class CartManagement
     }
 
     // add items to the cart with quantity
-    static public function addItemsToCartWithQty($product_id, $qty)
+    static public function addItemsToCartWithQty($product_id, $qty = 1)
     {
         $cart_items = self::getCartItemsFromCookie();
         $existing_item = null;
         foreach ($cart_items as $key => $item) {
             if ($item['product_id'] == $product_id) {
-                // $existing_item = $item;
                 $existing_item = $key;
                 break;
             }
         }
         if ($existing_item !== null) {
-            $cart_items[$existing_item]['quantity'] = $qty;
-            // $cart_items[$existing_item]['total_amount'] = $cart_items[$existing_item]['quantity'] * $cart_items[$existing_item]['price'];
+            $cart_items[$existing_item]['quantity'] += $qty;
             $cart_items[$existing_item]['total_amount'] = $cart_items[$existing_item]['quantity'] * $cart_items[$existing_item]['unit_amount'];
         } 
         else {
@@ -68,7 +66,8 @@ class CartManagement
                     'image' => $product->images[0],
                     'quantity' => $qty,
                     'unit_amount' => $product->price,
-                    'total_amount' => $product->price,
+                    // 'total_amount' => $product->price,
+                    'total_amount' => $product->price * $qty
                 ];
             }
         }
